@@ -54,7 +54,7 @@ differential_backup() {
 }
 
 # Liste des repertoires a sauvegarder
-directories=("emails" "fichiers" "site" "rh" "tickets")
+directories=("emails" "fichiers" "web" "rh" "it")
 
 # Verification de l'heure pour la sauvegarde
 if [ "$TIME" \> "00:01:00" ] && [ "$TIME" \< "23:59:00" ]; then
