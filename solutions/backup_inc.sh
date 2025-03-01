@@ -1,13 +1,13 @@
 #!/bin/bash
 # Definition des variables
 
-SOURCE_USER="rrotter"
+SOURCE_USER="cyberdyper"
 SOURCE_HOST="localhost"
-SOURCE_BASE="/home/rrotter"
+SOURCE_BASE="/home/cyberdyper"
 DEST_USER="save"
 DEST_HOST="srv-backup"
 DEST_BASE="/home/save"
-LOG_FILE="/home/rrotter/logs/backup_inc.log"
+LOG_FILE="/home/cyberdyper/logs/backup_inc.log"
 DATE=$(date +%Y-%m-%d_%H:%M:%S)
 FULL_BACKUP_MARKER="FULL_BACKUP_COMPLETED"
 RETENTION_DAYS=30
@@ -28,17 +28,17 @@ incremental_backup() {
     log "Debut de la sauvegarde incrementielle pour ${dir}"
 
     # Creation des repertoires necessaires
-    ssh -i /home/rrotter/.ssh/id_rsa ${DEST_USER}@${DEST_HOST} "mkdir -p ${FULL_BACKUP_DIR} ${INCREMENTAL_DIR}"
+    ssh -i /home/cyberdyper/.ssh/id_rsa ${DEST_USER}@${DEST_HOST} "mkdir -p ${FULL_BACKUP_DIR} ${INCREMENTAL_DIR}"
 
-    if ssh -i /home/rrotter/.ssh/id_rsa ${DEST_USER}@${DEST_HOST} "[ ! -f ${DEST_DIR}/${FULL_BACKUP_MARKER} ]"; then
+    if ssh -i /home/cyberdyper/.ssh/id_rsa ${DEST_USER}@${DEST_HOST} "[ ! -f ${DEST_DIR}/${FULL_BACKUP_MARKER} ]"; then
         log "Execution de la sauvegarde complete initiale pour ${dir}"
         rsync -avz --delete \
-            -e "ssh -i /home/rrotter/.ssh/id_rsa" \
+            -e "ssh -i /home/cyberdyper/.ssh/id_rsa" \
             "${SOURCE_DIR}/" "${DEST_USER}@${DEST_HOST}:${FULL_BACKUP_DIR}/" \
             >> "$LOG_FILE" 2>&1
         
         if [ $? -eq 0 ]; then
-            ssh -i /home/rrotter/.ssh/id_rsa ${DEST_USER}@${DEST_HOST} "touch ${DEST_DIR}/${FULL_BACKUP_MARKER}"
+            ssh -i /home/cyberdyper/.ssh/id_rsa ${DEST_USER}@${DEST_HOST} "touch ${DEST_DIR}/${FULL_BACKUP_MARKER}"
             log "Sauvegarde complete initiale terminee avec succes pour ${dir}"
         else
             log "Erreur lors de la sauvegarde complete initiale pour ${dir}"
@@ -47,7 +47,7 @@ incremental_backup() {
     else
         log "Execution de la sauvegarde incrementielle pour ${dir}"
         rsync -avz --delete --backup --backup-dir="${INCREMENTAL_DIR}" \
-            -e "ssh -i /home/rrotter/.ssh/id_rsa" \
+            -e "ssh -i /home/cyberdyper/.ssh/id_rsa" \
             "${SOURCE_DIR}/" "${DEST_USER}@${DEST_HOST}:${FULL_BACKUP_DIR}/" \
             >> "$LOG_FILE" 2>&1
         
@@ -61,7 +61,7 @@ incremental_backup() {
 
     # Suppression des anciennes sauvegardes
     log "Suppression des sauvegardes incrementielles de plus de ${RETENTION_DAYS} jours pour ${dir}"
-    ssh -i /home/rrotter/.ssh/id_rsa ${DEST_USER}@${DEST_HOST} \
+    ssh -i /home/cyberdyper/.ssh/id_rsa ${DEST_USER}@${DEST_HOST} \
         "find ${DEST_DIR}/incremental -type d -mtime +${RETENTION_DAYS} -exec rm -rf {} +" \
         >> "$LOG_FILE" 2>&1
     
