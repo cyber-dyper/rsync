@@ -1,5 +1,6 @@
 # RSYNC
-Appreneez à utiliser rsync pour vos backups avec le scénario suivant.
+## Bienvenue sur ce nouveau projet !
+Vous apprendrez ici à utiliser rsync pour vos backups avec le scénario suivant.
 
 ## **SCENARIO :**
 - Prendre en charge un projet de sauvegarde et restauration.
