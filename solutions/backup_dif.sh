@@ -1,9 +1,9 @@
 #!/bin/bash 
 # Definition des variables
 SOURCE_BASE="/home/cyberdyper/"
-DEST_USER="save"
+DEST_USER="cyberdyper"
 DEST_HOST="srv-backup"
-DEST_BASE="/home/save/vms/"
+DEST_BASE="/home/cyberdyper/vms/"
 LOG_FILE="/home/cyberdyper/logs/backup_dif.log"
 DATE=$(date +%Y-%m-%d)
 TIME=$(date +%H:%M:%S)
