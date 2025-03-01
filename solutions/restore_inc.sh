@@ -1,10 +1,10 @@
 #!/bin/bash
 
-SOURCE_USER="save"
+SOURCE_USER="cyberdyper"
 SOURCE_HOST="srv-backup"
-SOURCE_BASE="/home/save"
-DEST_BASE="/home/rrotter"
-LOG_FILE="/home/rrotter/logs/restore_inc.log"
+SOURCE_BASE="/home/cyberdyper"
+DEST_BASE="/home/cyberdyper"
+LOG_FILE="/home/cyberdyper/logs/restore_inc.log"
 FULL_BACKUP_MARKER="FULL_BACKUP_COMPLETED"
 
 DIRECTORIES=("web" "rh" "it" "fichiers" "emails")
@@ -18,13 +18,13 @@ restore_latest() {
     log "Restauration de la derniere version de $dir"
 
     # Trouver la sauvegarde incrementale la plus recente
-    local latest_backup=$(ssh -i /home/rrotter/.ssh/id_rsa ${SOURCE_USER}@${SOURCE_HOST} "ls -1td ${SOURCE_BASE}/${dir}/incremental/*/ 2>/dev/null | head -n1")
+    local latest_backup=$(ssh -i /home/cyberdyper/.ssh/id_rsa ${SOURCE_USER}@${SOURCE_HOST} "ls -1td ${SOURCE_BASE}/${dir}/incremental/*/ 2>/dev/null | head -n1")
 
     if [ -n "$latest_backup" ]; then
         # S'assurer que le repertoire de destination existe
         mkdir -p "${DEST_BASE}/${dir}/incremental"
 
-        rsync -avz -e "ssh -i /home/rrotter/.ssh/id_rsa" \
+        rsync -avz -e "ssh -i /home/cyberdyper/.ssh/id_rsa" \
             "${SOURCE_USER}@${SOURCE_HOST}:${latest_backup}/" "${DEST_BASE}/${dir}/incremental/" >> "$LOG_FILE" 2>&1
 
         if [ $? -eq 0 ]; then
@@ -41,21 +41,21 @@ restore_previous() {
     local dir=$1
     log "Restauration de la sauvegarde complete et des sauvegardes incrementales de $dir"
 
-    if ssh -i /home/rrotter/.ssh/id_rsa ${SOURCE_USER}@${SOURCE_HOST} "[ -f ${SOURCE_BASE}/${dir}/${FULL_BACKUP_MARKER} ]"; then
+    if ssh -i /home/cyberdyper/.ssh/id_rsa ${SOURCE_USER}@${SOURCE_HOST} "[ -f ${SOURCE_BASE}/${dir}/${FULL_BACKUP_MARKER} ]"; then
         # S'assurer que le repertoire de destination existe
         mkdir -p "${DEST_BASE}/${dir}"
 
-        rsync -avz -e "ssh -i /home/rrotter/.ssh/id_rsa" \
+        rsync -avz -e "ssh -i /home/cyberdyper/.ssh/id_rsa" \
             "${SOURCE_USER}@${SOURCE_HOST}:${SOURCE_BASE}/${dir}/full_backup/" "${DEST_BASE}/${dir}/" >> "$LOG_FILE" 2>&1
 
         if [ $? -eq 0 ]; then
             log "Restauration de la sauvegarde complete de ${dir} terminee avec succes"
 
-            local incremental_backups=$(ssh -i /home/rrotter/.ssh/id_rsa ${SOURCE_USER}@${SOURCE_HOST} "ls -1td ${SOURCE_BASE}/${dir}/incremental/*")
+            local incremental_backups=$(ssh -i /home/cyberdyper/.ssh/id_rsa ${SOURCE_USER}@${SOURCE_HOST} "ls -1td ${SOURCE_BASE}/${dir}/incremental/*")
 
             for backup in $incremental_backups; do
                 log "Application de la sauvegarde incrementale : $backup"
-                rsync -avz -e "ssh -i /home/rrotter/.ssh/id_rsa" \
+                rsync -avz -e "ssh -i /home/cyberdyper/.ssh/id_rsa" \
                     "${SOURCE_USER}@${SOURCE_HOST}:${backup}/" "${DEST_BASE}/${dir}/" >> "$LOG_FILE" 2>&1
 
                 if [ $? -ne 0 ]; then
