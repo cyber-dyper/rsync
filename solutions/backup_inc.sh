@@ -12,7 +12,7 @@ DATE=$(date +%Y-%m-%d_%H:%M:%S)
 FULL_BACKUP_MARKER="FULL_BACKUP_COMPLETED"
 RETENTION_DAYS=30
 
-DIRECTORIES=("web" "rh" "tickets" "fichiers" "emails")
+DIRECTORIES=("web" "rh" "it" "fichiers" "emails")
 
 log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
