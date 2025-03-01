@@ -4,9 +4,9 @@
 SOURCE_USER="cyberdyper"
 SOURCE_HOST="localhost"
 SOURCE_BASE="/home/cyberdyper"
-DEST_USER="save"
+DEST_USER="cyberdyper"
 DEST_HOST="srv-backup"
-DEST_BASE="/home/save"
+DEST_BASE="/home/cyberdyper"
 LOG_FILE="/home/cyberdyper/logs/backup_inc.log"
 DATE=$(date +%Y-%m-%d_%H:%M:%S)
 FULL_BACKUP_MARKER="FULL_BACKUP_COMPLETED"
