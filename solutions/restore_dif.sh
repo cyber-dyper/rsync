@@ -3,12 +3,12 @@
 SOURCE_USER="save"
 SOURCE_HOST="srv-backup"
 SOURCE_BASE="/home/save/vms"
-DEST_BASE="/home/rrotter"
-DEST_USER="rrotter"
+DEST_BASE="/home/cyberdyper"
+DEST_USER="cyberdyper"
 DEST_HOST="localhost"
-LOG_FILE="/home/rrotter/logs/restore_dif.log"
+LOG_FILE="/home/cyberdyper/logs/restore_dif.log"
 
-DIRECTORIES=("emails" "tickets" "site" "rh" "fichiers")
+DIRECTORIES=("emails" "tickets" "web" "rh" "fichiers")
 
 log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
@@ -18,7 +18,7 @@ check_backup() {
     local dir=$1
     local SOURCE_DIR="${SOURCE_BASE}/${dir}"
     
-    if ! ssh -i /home/rrotter/.ssh/id_rsa ${SOURCE_USER}@${SOURCE_HOST} "[ -d ${SOURCE_DIR} ]" >> "$LOG_FILE" 2>&1; then
+    if ! ssh -i /home/cyberdyper/.ssh/id_rsa ${SOURCE_USER}@${SOURCE_HOST} "[ -d ${SOURCE_DIR} ]" >> "$LOG_FILE" 2>&1; then
         log "Aucune sauvegarde trouvee pour ${dir}"
         return 1
     fi
@@ -45,7 +45,7 @@ restore_directory_differential() {
         fi
 
         rsync -avvz --delete $RESUME_FLAG \
-            -e "ssh -i /home/rrotter/.ssh/id_rsa" \
+            -e "ssh -i /home/cyberdyper/.ssh/id_rsa" \
             "${SOURCE_USER}@${SOURCE_HOST}:${SOURCE_DIR}/" "${DEST_DIR}/" \
             >> "$LOG_FILE" 2>&1
 
