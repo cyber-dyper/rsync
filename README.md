@@ -1,39 +1,86 @@
-# RSYNC
-## Bienvenue sur ce nouveau projet !
-Vous apprendrez ici à utiliser rsync pour vos backups avec le scénario suivant.
+# 🚀 RSYNC - Sauvegarde et Restauration Automatisées 🛠️
 
-## **SCENARIO :**
-- Prendre en charge un projet de sauvegarde et restauration.
-- L’objectif du projet consiste à tester deux stratégies différentes (1 & 2).
-- Les sauvegardes doivent s'executer automatiquement depuis chaque système et être ensuite centraliser sur le serveur de sauvegarde dédié.
-- Les restaurations doivent s'executer manuellement uniquement et depuis les systèmes.
-- Chaque action doit être tracée, horodatée et commentée.
+## 🎉 **Bienvenue sur ce nouveau projet !** 🎉
 
+Tu apprendras ici à utiliser **rsync** pour automatiser tes **sauvegardes** et **restaurations** à travers un scénario réaliste et professionnel. 
 
+---
 
-## **TON INFRASTRUCTURE :**
-- 1 serveur de sauvegarde et 5 systèmes à sauvegarder : web, fichiers, emails, RH et IT.
+## 🎯 **SCÉNARIO : Sauvegarde & Restauration** 
 
+📦 **Objectif du projet :**
+- Prendre en charge un projet de **sauvegarde** et **restauration** complet.
+- Tester deux **stratégies de sauvegarde** différentes (**incrémentale** & **différentielle**).
+- Automatiser les **sauvegardes** sur tous les systèmes, puis les centraliser sur un **serveur de sauvegarde dédié**.
+- Maintenir la **restauration manuelle**, uniquement depuis les systèmes clients.
+- Assurer une **traçabilité complète** avec horodatage et commentaires pour chaque action.
 
+---
 
-## **STRATÉGIE 1 : INCREMENTALE**
-### Sauvegarde
-- La première stratégie consiste à sauvegarder les données de même nature et donc relatives à chaque machine virtuelle. Conserve la version N du jour et N-1 de la veille de chaque élément arborescence (dossiers et fichiers). Conserve chaque ancienne sauvegarde pour un nombre de jour maximum.
-### Restauration
-- Les utilisateurs doivent pouvoir restaurer la version N ou N-1 de l'ensemble de leur documents.
+## 🏗️ **TON INFRASTRUCTURE :**
 
-## **STRATÉGIE 2 : DIFFERENTIELLE**
-### Sauvegarde 
-- La seconde stratégie consiste à sauvegarder quotidiennement les systèmes et donc machines virtuelles entière ce qui veut dire beaucoup de volume, d'où la sauvegarde différentielle. Choisi une heure stratégique pour qu'elles soient planifiées de manière à ne pas perturber le travail des collaborateurs. Si la sauvegarde est intérrompue, prévoie sa reprise lors de la sauvegarde suivante jusqu'à ce qu'elle soit totalement transférée.
-### Restauration 
-- Les utilisateurs doivent pouvoir restaurer la seule sauvegarde du système entier de la veille si terminée.
+🖥️ **1 serveur de sauvegarde** 🛡️
 
+💻 **5 systèmes à sauvegarder :**
+- 🌐 **Serveur web**
+- 📂 **Serveur de fichiers**
+- 📧 **Serveur de mails**
+- 👥 **Serveur RH**
+- 💼 **Serveur IT**
 
+---
 
-## **LIVRABLES :**
-### Rassembler les scripts
-1. Des sauvegardes et restaurations incrémentales
-2. Des sauvegardes et restaurations différentielles
-3. La configuration du planificateur de tâches
-4. Des fichiers de traces
+## 🧠 **STRATÉGIE 1 : Sauvegarde INCRÉMENTALE** 
 
+### 💾 **Sauvegarde :** 
+
+- Sauvegarder uniquement les **données de même nature** liées à chaque **machine virtuelle**.
+- Conserver la version **N du jour** et **N-1 de la veille** pour chaque dossier et fichier.
+- Limiter la rétention des anciennes sauvegardes à un nombre de jours défini.
+- Gérer de manière optimale l'espace de stockage tout en offrant une **historique de versions** suffisant.
+
+### 🔄 **Restauration :** 
+
+- Permettre aux utilisateurs de restaurer la version **N** ou **N-1** de l'ensemble de leurs documents.
+- Assurer une restauration **rapide** et **intuitive**.
+
+---
+
+## 💡 **STRATÉGIE 2 : Sauvegarde DIFFÉRENTIELLE** 
+
+### 💽 **Sauvegarde :** 
+
+- Sauvegarder quotidiennement l'intégralité des **machines virtuelles**, incluant systèmes et données.
+- Utiliser une **sauvegarde différentielle** pour réduire le volume des données transférées quotidiennement.
+- Planifier les sauvegardes à une **heure stratégique**, évitant toute perturbation du travail des collaborateurs.
+- Mettre en place une **reprise automatique** des sauvegardes en cas d'interruption, jusqu'à leur achèvement complet.
+
+### 🛠️ **Restauration :** 
+
+- Offrir la possibilité de restaurer **l'intégralité du système** à partir de la **dernière sauvegarde complète** disponible.
+- Simplifier le processus pour garantir une remise en production rapide en cas de panne.
+
+---
+
+## 📦 **LIVRABLES : Ce que tu dois fournir** 
+
+### 📜 **1. Scripts de Sauvegarde & Restauration Incrémentale** 
+- Automatisation complète de la stratégie **incrémentale**.
+- Scripts documentés avec commentaires clairs sur chaque étape.
+
+### 📑 **2. Scripts de Sauvegarde & Restauration Différentielle** 
+- Mise en œuvre de la stratégie **différentielle**, avec gestion des volumes de données.
+- Scripts optimisés pour minimiser l'impact sur la bande passante et le temps d'arrêt.
+
+### ⏰ **3. Configuration du Planificateur de Tâches** 
+- Paramétrage du planificateur de tâches pour automatiser les sauvegardes à des moments clés.
+- Assurer que chaque tâche est bien enregistrée et facilement maintenable.
+
+### 📝 **4. Fichiers de Traces** 
+- Génération de **logs détaillés** pour chaque opération de sauvegarde et restauration.
+- Inclure des **horodatages**, des **statuts de réussite/échec** et des **commentaires personnalisés**.
+
+---
+
+## 💪 **Prêt à automatiser tes sauvegardes comme un pro ?** 🚀
+N'oublie pas de t'amuser tout en sécurisant tes données ! 😉
