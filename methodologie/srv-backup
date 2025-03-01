@@ -1,12 +1,12 @@
-save@srv-backup:~$ mkdir -p /home/save/{emails,fichiers,rh,site,tickets,vms}/{current} 
+save@srv-backup:~$ mkdir -p /home/save/{emails,fichiers,rh,web,it,vms}/{current} 
 save@srv-backup:~$ ls -l 
 
 total 24 
 drwxr-xr-x 3 save save 4096 Nov 19 20:59 emails 
 drwxr-xr-x 3 save save 4096 Nov 19 20:59 fichiers 
 drwxr-xr-x 3 save save 4096 Nov 19 20:59 rh 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 site 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 tickets 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 web 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 it 
 drwxr-xr-x 3 save save 4096 Nov 19 20:59 vms 
 
 save@srv-backup:~$ cd emails/ 
@@ -22,15 +22,15 @@ total 24
 drwxr-xr-x 3 save save 4096 Nov 19 20:59 emails 
 drwxr-xr-x 3 save save 4096 Nov 19 20:59 fichiers 
 drwxr-xr-x 3 save save 4096 Nov 19 20:59 rh 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 site 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 tickets 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 web 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 it 
 drwxr-xr-x 3 save save 4096 Nov 19 20:59 vms 
 
-save@srv-backup:~$ rm -r emails/ fichiers/ rh/ site/ tickets/ vms/ 
+save@srv-backup:~$ rm -r emails/ fichiers/ rh/ web/ it/ vms/ 
 save@srv-backup:~$ ls -l 
 
 total 0 
-save@srv-backup:~$ mkdir -p /home/save/{emails,fichiers,rh,site,tickets,vms}/current 
+save@srv-backup:~$ mkdir -p /home/save/{emails,fichiers,rh,web,it,vms}/current 
 save@srv-backup:~$ cd fichiers/ 
 save@srv-backup:~/fichiers$ ls  
 current 
