@@ -8,7 +8,7 @@ DEST_USER="cyberdyper"
 DEST_HOST="localhost"
 LOG_FILE="/home/cyberdyper/logs/restore_dif.log"
 
-DIRECTORIES=("emails" "tickets" "web" "rh" "fichiers")
+DIRECTORIES=("emails" "it" "web" "rh" "fichiers")
 
 log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
