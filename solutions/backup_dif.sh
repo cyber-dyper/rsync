@@ -1,13 +1,13 @@
 #!/bin/bash 
 # Definition des variables
-SOURCE_BASE="/home/rrotter/"
+SOURCE_BASE="/home/cyberdyper/"
 DEST_USER="save"
 DEST_HOST="srv-backup"
 DEST_BASE="/home/save/vms/"
-LOG_FILE="/home/rrotter/logs/backup_dif.log"
+LOG_FILE="/home/cyberdyper/logs/backup_dif.log"
 DATE=$(date +%Y-%m-%d)
 TIME=$(date +%H:%M:%S)
-RESUME_FILE="/home/rrotter/logs/reprise_backup.txt"
+RESUME_FILE="/home/cyberdyper/logs/reprise_backup.txt"
 
 # Fonction de journalisation
 log() {
@@ -24,28 +24,28 @@ differential_backup() {
     log "Debut de la sauvegarde differentielle pour ${dir}"
 
     # Creation du repertoire de destination si pas existant
-    ssh -i /home/rrotter/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "mkdir -p ${DEST_DIR}"
+    ssh -i /home/cyberdyper/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "mkdir -p ${DEST_DIR}"
 
     # Verification si une sauvegarde partielle existe
-    if ssh -i /home/rrotter/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "[ -f ${DEST_DIR}/.partial_backup ]"; then
+    if ssh -i /home/cyberdyper/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "[ -f ${DEST_DIR}/.partial_backup ]"; then
         log "Reprise de la sauvegarde partielle pour ${dir}"
         RESUME_FLAG="--partial"
     else
         log "Demarrage d'une nouvelle sauvegarde pour ${dir}"
-        ssh -i /home/rrotter/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "touch ${DEST_DIR}/.partial_backup"
+        ssh -i /home/cyberdyper/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "touch ${DEST_DIR}/.partial_backup"
     fi
 
     # Creation du repertoire de destination si pas existant
-    ssh -i /home/rrotter/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "mkdir -p ${DEST_DIR}"
+    ssh -i /home/cyberdyper/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "mkdir -p ${DEST_DIR}"
 
     rsync -avvz --stop-at=04:00 --delete --bwlimit=20M $RESUME_FLAG \
-        -e "ssh -i /home/rrotter/.ssh/id_rsa" \
+        -e "ssh -i /home/cyberdyper/.ssh/id_rsa" \
         "${SOURCE_DIR}/" "${DEST_USER}@${DEST_HOST}:${DEST_DIR}/" \
         >> "$LOG_FILE" 2>&1
 
     if [ $? -eq 0 ]; then
         log "Sauvegarde differentielle de ${dir} terminee avec succes"
-        ssh -i /home/rrotter/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "rm -f ${DEST_DIR}/.partial_backup"
+        ssh -i /home/cyberdyper/.ssh/id_rsa "$DEST_USER@$DEST_HOST" "rm -f ${DEST_DIR}/.partial_backup"
     else
         log "Erreur lors de la sauvegarde differentielle de ${dir}"
         echo "${dir}" >> "$RESUME_FILE"
