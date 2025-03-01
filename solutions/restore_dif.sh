@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SOURCE_USER="save"
+SOURCE_USER="cyberdyper"
 SOURCE_HOST="srv-backup"
-SOURCE_BASE="/home/save/vms"
+SOURCE_BASE="/home/cyberdyper/vms"
 DEST_BASE="/home/cyberdyper"
 DEST_USER="cyberdyper"
 DEST_HOST="localhost"
