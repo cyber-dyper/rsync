@@ -1,5 +1,5 @@
 cyberdyper@srv-simulation:~$ mkdir -p /home/cyberdyper/emails/{michel,sonia,joseph} 
-cyberdyper@srv-simulation:~$ ls -l 
+cyberdyper@srv-simulation:~$ ls -l
 
 total 4 
 drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:17 emails 
