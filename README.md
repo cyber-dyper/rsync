@@ -24,7 +24,7 @@ Vous apprendrez ici à utiliser rsync pour vos backups avec le scénario suivant
 
 ## **STRATÉGIE 2 : DIFFERENTIELLE**
 ### Sauvegarde 
-- La seconde stratégie consiste à sauvegarder quotidiennement les systèmes et donc machines virtuelles entière ce qui veut dire beaucoup de volume, d'où la sauvegarde différée. Choisi une heure stratégique pour qu'elles soient planifiées de manière à ne pas perturber le travail des collaborateurs. Si la sauvegarde est intérrompue, prévoie sa reprise lors de la sauvegarde suivante jusqu'à ce qu'elle soit totalement transférée.
+- La seconde stratégie consiste à sauvegarder quotidiennement les systèmes et donc machines virtuelles entière ce qui veut dire beaucoup de volume, d'où la sauvegarde différentielle. Choisi une heure stratégique pour qu'elles soient planifiées de manière à ne pas perturber le travail des collaborateurs. Si la sauvegarde est intérrompue, prévoie sa reprise lors de la sauvegarde suivante jusqu'à ce qu'elle soit totalement transférée.
 ### Restauration 
 - Les utilisateurs doivent pouvoir restaurer la seule sauvegarde du système entier de la veille si terminée.
 
