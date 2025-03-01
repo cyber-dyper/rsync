@@ -1,0 +1,247 @@
+cyberdyper@srv-simulation:~$ mkdir -p /home/cyberdyper/emails/{michel,sonia,joseph} 
+cyberdyper@srv-simulation:~$ ls -l 
+
+total 4 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:17 emails 
+cyberdyper@srv-simulation:~$ cd emails/ 
+cyberdyper@srv-simulation:~/emails$ ls -l 
+
+total 12 
+drwxr-xr-x 2 cyberdyper cyberdyper 4096 Nov 19 21:17 joseph 
+drwxr-xr-x 2 cyberdyper cyberdyper 4096 Nov 19 21:17 michel 
+drwxr-xr-x 2 cyberdyper cyberdyper 4096 Nov 19 21:17 sonia 
+
+cyberdyper@srv-simulation:~/emails$ cd ../ 
+cyberdyper@srv-simulation:~$ mkdir -p /home/cyberdyper/web/{html,css,js,image}  
+cyberdyper@srv-simulation:~$ mkdir -p /home/cyberdyper/it/{client,finance,marketing}  
+cyberdyper@srv-simulation:~$ mkdir -p /home/cyberdyper/fichiers/{ppt,pdf,txt}  
+cyberdyper@srv-simulation:~$ mkdir -p /home/cyberdyper/rh/{bulletins,contrats,conges}  
+
+cyberdyper@srv-simulation:~$ ls -l 
+
+total 20 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:17 emails 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:19 fichiers 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:19 rh 
+drwxr-xr-x 6 cyberdyper cyberdyper 4096 Nov 19 21:18 web 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:18 it 
+
+cyberdyper@srv-simulation:~$ mkdir logs 
+cyberdyper@srv-simulation:~$ ls -l 
+
+total 24 
+
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:17 emails 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:19 fichiers 
+drwxr-xr-x 2 cyberdyper cyberdyper 4096 Nov 19 21:36 logs 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:19 rh 
+drwxr-xr-x 6 cyberdyper cyberdyper 4096 Nov 19 21:18 web 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:18 it 
+
+cyberdyper@srv-simulation:~$ mkdir scripts 
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/emails/joseph/joseph.pst bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00986212 s, 106 MB/s 
+
+cyberdyper@srv-simulation:~$ ls -l 
+
+total 28 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:17 emails 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:19 fichiers 
+drwxr-xr-x 2 cyberdyper cyberdyper 4096 Nov 19 21:36 logs 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:19 rh 
+drwxr-xr-x 2 cyberdyper cyberdyper 4096 Nov 19 21:36 scripts 
+drwxr-xr-x 6 cyberdyper cyberdyper 4096 Nov 19 21:18 web 
+drwxr-xr-x 5 cyberdyper cyberdyper 4096 Nov 19 21:18 it 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/emails/sonia/sonia.pst bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00552528 s, 190 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/emails/michel/michel.pst bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0084875 s, 124 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/web/html/index.html bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00468463 s, 224 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/web/css/code.css bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00662957 s, 158 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/web/js/code.js bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00340953 s, 308 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/web/image/image.jpeg bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.004295 s, 244 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/it/client/client1 bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00582808 s, 180 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/it/finance/fin1 bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00818323 s, 128 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/it/marketing/mkt1 bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00306584 s, 342 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/fichiers/pdf/merci.pdf bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00580812 s, 181 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/fichiers/ppt/demo.ppt bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00573281 s, 183 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/fichiers/txt/notes.txt bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00663451 s, 158 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/rh/bulletins/2024 bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00668661 s, 157 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/rh/contrats/solde bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00448694 s, 234 MB/s 
+
+cyberdyper@srv-simulation:~$ dd if=/dev/zero of=/home/cyberdyper/rh/conges/toussaint bs=4096 count=256 
+
+256+0 records in 
+256+0 records out 
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00408934 s, 256 MB/s 
+
+cyberdyper@srv-simulation:~$ ssh-keygen -t rsa -b 4096 -N "" 
+
+Generating public/private rsa key pair. 
+Enter file in which to save the key (/home/cyberdyper/.ssh/id_rsa):  
+Created directory '/home/cyberdyper/.ssh'. 
+Your identification has been saved in /home/cyberdyper/.ssh/id_rsa 
+Your public key has been saved in /home/cyberdyper/.ssh/id_rsa.pub 
+The key fingerprint is: 
+SHA256:ghdJp9nVQYRBxEMa0rZLRA+ny4GbEqqvcxaXScyDOfc cyberdyper@srv-simulation 
+
+The key's randomart image is: 
+
++---[RSA 4096]----+ 
+
+|      oo==B*+.   | 
+
+|     . O+O+ .    | 
+
+|   =. *o=...     | 
+
+|  +.*o =oo       | 
+
+|  .+o==.S.       | 
+
+| .. +oE..        | 
+
+|.  o             | 
+
+|..o              | 
+
+|.=.              | 
+
++----[SHA256]-----+ 
+
+cyberdyper@srv-simulation:~$ nano /etc/hosts 
+cyberdyper@srv-simulation:~$  
+cyberdyper@srv-simulation:~$ su- 
+-bash: su- : commande introuvable 
+
+cyberdyper@srv-simulation:~$ su - 
+Password:  
+root@srv-simulation:~# nano /etc/hosts 
+root@srv-simulation:~# exit 
+déconnexion 
+
+cyberdyper@srv-simulation:~$ ssh save@srv-backup 
+
+The authenticity of host 'srv-backup (192.168.86.35)' can't be established. 
+ED25519 key fingerprint is SHA256:LyCdlLkWG2tDrgFTL5acHB2zEvLwdjjOJneXtlB2vIM. 
+This key is not known by any other names. 
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes 
+Warning: Permanently added 'srv-backup' (ED25519) to the list of known hosts. 
+save@srv-backup's password:  
+Linux srv-backup 6.1.0-27-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.115-1 (2024-11-01) x86_64 
+
+The programs included with the Debian GNU/Linux system are free software; 
+the exact distribution terms for each program are described in the 
+individual files in /usr/share/doc/copyright. 
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent 
+permitted by applicable law. 
+
+Last login: Tue Nov 19 20:54:48 2024 from 192.168.86.32 
+
+save@srv-backup:~$ exit 
+
+déconnexion 
+
+Connection to srv-backup closed. 
+
+cyberdyper@srv-simulation:~$ ssh-copy-id -i ~/.ssh/id_rsa.pub save@srv-backup 
+
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/cyberdyper/.ssh/id_rsa.pub" 
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed 
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys 
+
+save@srv-backup's password:  
+
+Number of key(s) added: 1 
+
+Now try logging into the machine, with:   "ssh 'save@srv-backup'" 
+and check to make sure that only the key(s) you wanted were added. 
+
+cyberdyper@srv-simulation:~$ ssh save@srv-backup 
+
+Linux srv-backup 6.1.0-27-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.115-1 (2024-11-01) x86_64 
+
+The programs included with the Debian GNU/Linux system are free software; 
+the exact distribution terms for each program are described in the 
+individual files in /usr/share/doc/copyright. 
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent 
+permitted by applicable law. 
+
+Last login: Tue Nov 19 21:41:45 2024 from 192.168.86.37 
+
+save@srv-backup:~$ exit 
+
+déconnexion 
+Connection to srv-backup closed. 
+cyberdyper@srv-simulation:~$  
