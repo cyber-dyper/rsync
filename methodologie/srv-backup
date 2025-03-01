@@ -1,0 +1,111 @@
+save@srv-backup:~$ mkdir -p /home/save/{emails,fichiers,rh,site,tickets,vms}/{current} 
+save@srv-backup:~$ ls -l 
+
+total 24 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 emails 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 fichiers 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 rh 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 site 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 tickets 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 vms 
+
+save@srv-backup:~$ cd emails/ 
+save@srv-backup:~/emails$ ls -l 
+
+total 4 
+drwxr-xr-x 2 save save 4096 Nov 19 20:59 {current} 
+
+save@srv-backup:~/emails$ cd ../ 
+save@srv-backup:~$ ls -l 
+
+total 24 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 emails 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 fichiers 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 rh 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 site 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 tickets 
+drwxr-xr-x 3 save save 4096 Nov 19 20:59 vms 
+
+save@srv-backup:~$ rm -r emails/ fichiers/ rh/ site/ tickets/ vms/ 
+save@srv-backup:~$ ls -l 
+
+total 0 
+save@srv-backup:~$ mkdir -p /home/save/{emails,fichiers,rh,site,tickets,vms}/current 
+save@srv-backup:~$ cd fichiers/ 
+save@srv-backup:~/fichiers$ ls  
+current 
+
+save@srv-backup:~/fichiers$ ssh-keygen -t rsa -b 4096 -N "" 
+
+Generating public/private rsa key pair. 
+Enter file in which to save the key (/home/save/.ssh/id_rsa):  
+Created directory '/home/save/.ssh'. 
+Your identification has been saved in /home/save/.ssh/id_rsa 
+Your public key has been saved in /home/save/.ssh/id_rsa.pub 
+
+The key fingerprint is: 
+SHA256:tYx6lgEYFgkzXft0YIyEyqzftZcU3/ruavtY65jXV6g save@srv-backup 
+The key's randomart image is: 
+
++---[RSA 4096]----+ 
+
+|  +o+*ooo        | 
+
+|   ++o.o..       | 
+
+| o .. o . o      | 
+
+|  +    +.= .     | 
+
+| .      Soo.   . | 
+
+|.     ...o. . . .| 
+
+| . . ..o+. ..o  .| 
+
+|  . . .oo o=E.. .| 
+
+|       . .*XB  . | 
+
++----[SHA256]-----+ 
+
+save@srv-backup:~/fichiers$ cd ../ 
+save@srv-backup:~$ chmod 600 /home/save/.ssh/id_rsa 
+save@srv-backup:~$ chmod 644 /home/save/.ssh/id_rsa.pub  
+save@srv-backup:~$ chmod 700 /home/save/.ssh/ 
+
+save@srv-backup:~$ apt-get install rsync 
+
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied) 
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root? 
+save@srv-backup:~$ su - 
+Password:  
+
+root@srv-backup:~# apt-get install rsync 
+Lecture des listes de paquets... Fait 
+Construction de l'arbre des dépendances... Fait 
+
+Lecture des informations d'état... Fait       
+
+Paquets suggérés : 
+  python3-braceexpand 
+Les NOUVEAUX paquets suivants seront installés : 
+  rsync 
+0 mis à jour, 1 nouvellement installés, 0 à enlever et 0 non mis à jour. 
+Il est nécessaire de prendre 417 ko dans les archives. 
+Après cette opération, 795 ko d'espace disque supplémentaires seront utilisés. 
+Réception de :1 http://miroir.univ-lorraine.fr/debian bookworm/main amd64 rsync amd64 3.2.7-1 [417 kB] 
+417 ko réceptionnés en 0s (1 160 ko/s) 
+Sélection du paquet rsync précédemment désélectionné. 
+(Lecture de la base de données... 35003 fichiers et répertoires déjà installés.) 
+Préparation du dépaquetage de .../rsync_3.2.7-1_amd64.deb ... 
+Dépaquetage de rsync (3.2.7-1) ... 
+Paramétrage de rsync (3.2.7-1) ... 
+rsync.service is a disabled or a static unit, not starting it. 
+Traitement des actions différées (« triggers ») pour man-db (2.11.2-2) ... 
+
+root@srv-backup:~# exit 
+déconnexion 
+
+save@srv-backup:~$ exit 
+déconnexion 
