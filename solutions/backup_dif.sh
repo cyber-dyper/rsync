@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 # Definition des variables
 SOURCE_BASE="/home/rrotter/"
 DEST_USER="save"
