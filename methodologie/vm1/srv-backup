@@ -1,50 +1,50 @@
-save@srv-backup:~$ mkdir -p /home/save/{emails,fichiers,rh,web,it,vms}/{current} 
-save@srv-backup:~$ ls -l 
+cyberdyper@srv-backup:~$ mkdir -p /home/cyberdyper/{emails,fichiers,rh,web,it,vms}/{current} 
+cyberdyper@srv-backup:~$ ls -l 
 
 total 24 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 emails 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 fichiers 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 rh 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 web 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 it 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 vms 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 emails 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 fichiers 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 rh 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 web 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 it 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 vms 
 
-save@srv-backup:~$ cd emails/ 
-save@srv-backup:~/emails$ ls -l 
+cyberdyper@srv-backup:~$ cd emails/ 
+cyberdyper@srv-backup:~/emails$ ls -l 
 
 total 4 
-drwxr-xr-x 2 save save 4096 Nov 19 20:59 {current} 
+drwxr-xr-x 2 cyberdyper cyberdyper 4096 Nov 19 20:59 {current} 
 
-save@srv-backup:~/emails$ cd ../ 
-save@srv-backup:~$ ls -l 
+cyberdyper@srv-backup:~/emails$ cd ../ 
+cyberdyper@srv-backup:~$ ls -l 
 
 total 24 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 emails 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 fichiers 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 rh 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 web 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 it 
-drwxr-xr-x 3 save save 4096 Nov 19 20:59 vms 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 emails 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 fichiers 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 rh 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 web 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 it 
+drwxr-xr-x 3 cyberdyper cyberdyper 4096 Nov 19 20:59 vms 
 
-save@srv-backup:~$ rm -r emails/ fichiers/ rh/ web/ it/ vms/ 
-save@srv-backup:~$ ls -l 
+cyberdyper@srv-backup:~$ rm -r emails/ fichiers/ rh/ web/ it/ vms/ 
+cyberdyper@srv-backup:~$ ls -l 
 
 total 0 
-save@srv-backup:~$ mkdir -p /home/save/{emails,fichiers,rh,web,it,vms}/current 
-save@srv-backup:~$ cd fichiers/ 
-save@srv-backup:~/fichiers$ ls  
+cyberdyper@srv-backup:~$ mkdir -p /home/cyberdyper/{emails,fichiers,rh,web,it,vms}/current 
+cyberdyper@srv-backup:~$ cd fichiers/ 
+cyberdyper@srv-backup:~/fichiers$ ls  
 current 
 
-save@srv-backup:~/fichiers$ ssh-keygen -t rsa -b 4096 -N "" 
+cyberdyper@srv-backup:~/fichiers$ ssh-keygen -t rsa -b 4096 -N "" 
 
 Generating public/private rsa key pair. 
-Enter file in which to save the key (/home/save/.ssh/id_rsa):  
-Created directory '/home/save/.ssh'. 
-Your identification has been saved in /home/save/.ssh/id_rsa 
-Your public key has been saved in /home/save/.ssh/id_rsa.pub 
+Enter file in which to cyberdyper the key (/home/cyberdyper/.ssh/id_rsa):  
+Created directory '/home/cyberdyper/.ssh'. 
+Your identification has been cyberdyperd in /home/cyberdyper/.ssh/id_rsa 
+Your public key has been cyberdyperd in /home/cyberdyper/.ssh/id_rsa.pub 
 
 The key fingerprint is: 
-SHA256:tYx6lgEYFgkzXft0YIyEyqzftZcU3/ruavtY65jXV6g save@srv-backup 
+SHA256:tYx6lgEYFgkzXft0YIyEyqzftZcU3/ruavtY65jXV6g cyberdyper@srv-backup 
 The key's randomart image is: 
 
 +---[RSA 4096]----+ 
@@ -69,16 +69,16 @@ The key's randomart image is:
 
 +----[SHA256]-----+ 
 
-save@srv-backup:~/fichiers$ cd ../ 
-save@srv-backup:~$ chmod 600 /home/save/.ssh/id_rsa 
-save@srv-backup:~$ chmod 644 /home/save/.ssh/id_rsa.pub  
-save@srv-backup:~$ chmod 700 /home/save/.ssh/ 
+cyberdyper@srv-backup:~/fichiers$ cd ../ 
+cyberdyper@srv-backup:~$ chmod 600 /home/cyberdyper/.ssh/id_rsa 
+cyberdyper@srv-backup:~$ chmod 644 /home/cyberdyper/.ssh/id_rsa.pub  
+cyberdyper@srv-backup:~$ chmod 700 /home/cyberdyper/.ssh/ 
 
-save@srv-backup:~$ apt-get install rsync 
+cyberdyper@srv-backup:~$ apt-get install rsync 
 
 E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied) 
 E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root? 
-save@srv-backup:~$ su - 
+cyberdyper@srv-backup:~$ su - 
 Password:  
 
 root@srv-backup:~# apt-get install rsync 
@@ -107,5 +107,5 @@ Traitement des actions différées (« triggers ») pour man-db (2.11.2-2) ...
 root@srv-backup:~# exit 
 déconnexion 
 
-save@srv-backup:~$ exit 
+cyberdyper@srv-backup:~$ exit 
 déconnexion 
