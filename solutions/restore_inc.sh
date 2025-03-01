@@ -7,7 +7,7 @@ DEST_BASE="/home/rrotter"
 LOG_FILE="/home/rrotter/logs/restore_inc.log"
 FULL_BACKUP_MARKER="FULL_BACKUP_COMPLETED"
 
-DIRECTORIES=("site" "rh" "tickets" "fichiers" "emails")
+DIRECTORIES=("web" "rh" "it" "fichiers" "emails")
 
 log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
